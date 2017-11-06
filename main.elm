@@ -44,7 +44,7 @@ main =
 
 view : Html.Html msg
 view =
-    div [ class "mains" ]
+    div [ class "" ]
         [ viewHead
         , sections
         ]
@@ -52,14 +52,14 @@ view =
 
 viewHead : Html.Html msg
 viewHead =
-    header [ class "jumbotron" ]
+    header []
         [ h1 [ id "greeting" ] [ text "Hello, Richard" ] ]
 
 
 sections : Html.Html msg
 sections =
     div [ class "wrapper" ]
-        [ section [ class "reddit" ] [ h1 [ id "greeting" ] [ text "reddit" ] ] ]
+        [ section [ class "main" ] [ section [ class "reddit" ] [ h3 [] [ text "reddit" ] ] ] ]
 
 
 
