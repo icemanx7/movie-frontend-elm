@@ -10,38 +10,6 @@ main =
     view
 
 
-
--- main =
---     Html.beginnerProgram { view = view }
--- -- MODEL
--- type alias Model =
---     Int
--- model : Model
--- model =
---     0
--- -- UPDATE
--- type Msg
---     = Increment
---     | Decrement
--- update : Msg -> Model -> Model
--- update msg model =
---     case msg of
---         Increment ->
---             model + 1
---         Decrement ->
---             model - 1
--- VIEW
--- view model =
---     div [ class "jumbotron" ]
---         [ h1 [] [ text "Welcome to Dunder Mifflin!" ]
---         , p []
---             [ text "Dunder Mifflin Inc. (stock symbol "
---             , strong [] [ text "DMI" ]
---             , text ") is a micro-cap regional paper and office supply distributor with an emphasis on servicing small-business clients."
---             ]
---         ]
-
-
 view : Html.Html msg
 view =
     div [ class "" ]
@@ -59,9 +27,76 @@ viewHead =
 sections : Html.Html msg
 sections =
     div [ class "wrapper" ]
-        [ section [ class "main" ] [ reddits ] ]
+        [ section [ class "main" ] [ reddits, school ] ]
 
 
 reddits : Html.Html msg
 reddits =
-    section [ class "reddit" ] [ h3 [] [ text "reddit" ], p [] [ text "Ruc" ] ]
+    section [ class "reddit" ] [ h3 [] [ text "reddit" ], redditItems ]
+
+
+school : Html.Html msg
+school =
+    section [ class "school" ] [ h3 [] [ text "school" ], schoolItems ]
+
+
+redditItems : Html.Html msg
+redditItems =
+    ul []
+        [ li
+            []
+            [ a [ href "http://www.reddit.com/" ]
+                [ text "front" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/linux_gaming" ]
+                [ text "Linux Gaming" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/fitness" ]
+                [ text "Fitness" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/haskell" ]
+                [ text "Haskell" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/programming" ]
+                [ text "Programming" ]
+            ]
+        ]
+
+
+schoolItems : Html.Html msg
+schoolItems =
+    ul []
+        [ li
+            []
+            [ a [ href "http://www.reddit.com/" ]
+                [ text "front" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/linux_gaming" ]
+                [ text "Linux Gaming" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/fitness" ]
+                [ text "Fitness" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/haskell" ]
+                [ text "Haskell" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/programming" ]
+                [ text "Programming" ]
+            ]
+        ]
