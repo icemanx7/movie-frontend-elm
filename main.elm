@@ -2,34 +2,66 @@ module Main exposing (..)
 
 import Html exposing (Html, button, div, text)
 import Html.Events exposing (onClick)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 main =
-    Html.beginnerProgram { model = model, view = view, update = update }
+    view
 
 
 
--- MODEL
--- type alias Model = Int
---     model:Model
---     model =
---       0
--- UPDATE
--- type Msg = Increment | Decrement
---     update : Msg -> Model -> Model
---     update msg model =
---       case msg of
+-- main =
+--     Html.beginnerProgram { view = view }
+-- -- MODEL
+-- type alias Model =
+--     Int
+-- model : Model
+-- model =
+--     0
+-- -- UPDATE
+-- type Msg
+--     = Increment
+--     | Decrement
+-- update : Msg -> Model -> Model
+-- update msg model =
+--     case msg of
 --         Increment ->
---           model + 1
+--             model + 1
 --         Decrement ->
---           model - 1
--- -- VIEW
+--             model - 1
+-- VIEW
+-- view model =
+--     div [ class "jumbotron" ]
+--         [ h1 [] [ text "Welcome to Dunder Mifflin!" ]
+--         , p []
+--             [ text "Dunder Mifflin Inc. (stock symbol "
+--             , strong [] [ text "DMI" ]
+--             , text ") is a micro-cap regional paper and office supply distributor with an emphasis on servicing small-business clients."
+--             ]
+--         ]
 
 
-view : Model -> Html Msg
-view model =
-    div []
-        [ button [ onClick Decrement ] [ text "-" ]
-        , div [] [ text (toString model) ]
-        , button [ onClick Increment ] [ text "+" ]
+view : Html.Html msg
+view =
+    div [ class "mains" ]
+        [ viewHead
+        , sections
         ]
+
+
+viewHead : Html.Html msg
+viewHead =
+    header [ class "jumbotron" ]
+        [ h1 [ id "greeting" ] [ text "Hello, Richard" ] ]
+
+
+sections : Html.Html msg
+sections =
+    div [ class "wrapper" ]
+        [ section [ class "reddit" ] [ h1 [ id "greeting" ] [ text "reddit" ] ] ]
+
+
+
+-- div [ class "wrapper" ]
+--    [ section [ class "main" ] [] ]
