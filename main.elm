@@ -59,9 +59,9 @@ viewHead =
 sections : Html.Html msg
 sections =
     div [ class "wrapper" ]
-        [ section [ class "main" ] [ section [ class "reddit" ] [ h3 [] [ text "reddit" ] ] ] ]
+        [ section [ class "main" ] [ reddits ] ]
 
 
-
--- div [ class "wrapper" ]
---    [ section [ class "main" ] [] ]
+reddits : Html.Html msg
+reddits =
+    section [ class "reddit" ] [ h3 [] [ text "reddit" ], p [] [ text "Ruc" ] ]
