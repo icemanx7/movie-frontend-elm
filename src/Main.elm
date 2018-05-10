@@ -15,6 +15,7 @@ view =
     div [ class "" ]
         [ viewHead
         , sections
+        , reddits
         ]
 
 
@@ -38,6 +39,37 @@ reddits =
 school : Html.Html msg
 school =
     section [ class "school" ] [ h3 [] [ text "school" ], schoolItems ]
+
+
+schoolItems : Html.Html msg
+schoolItems =
+    ul []
+        [ li
+            []
+            [ a [ href "http://www.reddit.com/" ]
+                [ text "front" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/linux_gaming" ]
+                [ text "Linux Gaming" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/fitness" ]
+                [ text "Fitness" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/haskell" ]
+                [ text "Haskell" ]
+            ]
+        , li
+            []
+            [ a [ href "http://www.reddit.com/r/programming" ]
+                [ text "Programming" ]
+            ]
+        ]
 
 
 redditItems : Html.Html msg
@@ -70,33 +102,3 @@ redditItems =
             ]
         ]
 
-
-schoolItems : Html.Html msg
-schoolItems =
-    ul []
-        [ li
-            []
-            [ a [ href "http://www.reddit.com/" ]
-                [ text "front" ]
-            ]
-        , li
-            []
-            [ a [ href "http://www.reddit.com/r/linux_gaming" ]
-                [ text "Linux Gaming" ]
-            ]
-        , li
-            []
-            [ a [ href "http://www.reddit.com/r/fitness" ]
-                [ text "Fitness" ]
-            ]
-        , li
-            []
-            [ a [ href "http://www.reddit.com/r/haskell" ]
-                [ text "Haskell" ]
-            ]
-        , li
-            []
-            [ a [ href "http://www.reddit.com/r/programming" ]
-                [ text "Programming" ]
-            ]
-        ]
