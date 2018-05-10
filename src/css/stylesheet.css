@@ -1,8 +1,18 @@
 body {
     font-family: FontAwesome;
-    background-image:  linear-gradient(to right, #918b81,#7a736a,#63738f);
 }
 
 #login_label {
     text-align: center
 }
+
+.grid-container {
+    display: grid;
+    background-image:  linear-gradient(to right, #918b81,#7a736a,#63738f);
+}
+
+.loginInput {
+    display: grid;
+    grid-gap: 50px 100px;
+}
+

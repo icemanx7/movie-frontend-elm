@@ -10,7 +10,7 @@ import Login.Update exposing (..)
 
 view : Model -> Html.Html Msg
 view model =
-    div [ class "" ]
+    div [ class "login" ]
         [ viewHead
         , makeHtmlForm model
         ]

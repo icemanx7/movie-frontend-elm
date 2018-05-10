@@ -10,7 +10,7 @@ import Login.Update exposing (..)
 
 view : Model -> Html.Html Msg
 view model =
-    div [ class "" ]
+    div [ class "grid-container" ]
         [ viewHead
         , makeHtmlForm model
         ]
@@ -24,21 +24,23 @@ viewHead =
 
 makeHtmlForm : Model -> Html.Html Msg
 makeHtmlForm model =
-    Html.form []
-        [ input
-            [ id "username"
-            , type_ "text"
-            , onInput UsernameInput
-            , placeholder "Username"
+    div [ class "loginInput" ]
+        [ Html.form []
+            [ input
+                [ id "username"
+                , type_ "text"
+                , onInput UsernameInput
+                , placeholder "Username"
+                ]
+                []
+            , input
+                [ id "password"
+                , type_ "password"
+                , onInput PasswordInput
+                , placeholder "Password"
+                ]
+                []
+            , input [ type_ "submit" ]
+                [ text "Login" ]
             ]
-            []
-        , input
-            [ id "password"
-            , type_ "password"
-            , onInput PasswordInput
-            , placeholder "Password"
-            ]
-            []
-        , input [ type_ "submit" ]
-            [ text "Login" ]
         ]
