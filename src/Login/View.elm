@@ -11,27 +11,30 @@ import Login.Update exposing (..)
 view : Model -> Html.Html Msg
 view model =
     div [ class "" ]
-        [ viewHead,
-        makeHtmlForm model]
+        [ viewHead
+        , makeHtmlForm model
+        ]
 
 
 viewHead : Html.Html msg
 viewHead =
     header []
-        [ h1 [ id "greeting" ] [ text "Please Login" ] ]
+        [ h1 [ id "login_label" ] [ text "Login" ] ]
 
 
 makeHtmlForm : Model -> Html.Html Msg
 makeHtmlForm model =
     Html.form []
         [ input
-            [ type_ "text"
+            [ id "username"
+            , type_ "text"
             , onInput UsernameInput
             , placeholder "Username"
             ]
             []
         , input
-            [ type_ "password"
+            [ id "password"
+            , type_ "password"
             , onInput PasswordInput
             , placeholder "Password"
             ]
