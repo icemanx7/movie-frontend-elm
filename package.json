@@ -4,7 +4,9 @@
     "request": "^2.86.0"
   },
   "scripts": {
-    "build": "gulp connect"
+    "build": "gulp build",
+    "serve": "gulp connect",
+    "run": "gulp default"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

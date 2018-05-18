@@ -7,43 +7,46 @@ const connect = require('gulp-connect');
 
 // File paths
 const paths = {
-  dest: 'dist',
-  elm: 'src/main.elm',
-  static: 'src/*.{html,css}'
+    dest_js: 'dist/js',
+    dest_html: 'dist',
+    dest_css: 'dist/css',
+    elm: 'src/Main.elm',
+    static_css: 'src/css/*.css',
+    static_html: 'index.html'
 };
 
-// Init Elm
 gulp.task('elm-init', elm.init);
 
-// Compile Elm to HTML
-gulp.task('elm', ['elm-init'], function(){
+gulp.task('elm', ['elm-init'], function () {
     return gulp.src(paths.elm)
-        .pipe(plumber())
         .pipe(elm())
-        .pipe(gulp.dest(paths.dest));
+        .pipe(gulp.dest(paths.dest_js));
 });
 
-// Move static assets to dist
-gulp.task('static', function() {
-    return gulp.src(paths.static)
+gulp.task('static_html', function () {
+    return gulp.src(paths.static_html)
         .pipe(plumber())
-        .pipe(gulp.dest(paths.dest));
+        .pipe(gulp.dest(paths.dest_html));
 });
 
-// Watch for changes and compile
-gulp.task('watch', function() {
-    gulp.watch(paths.elm, ['elm']);
+gulp.task('static_css', function () {
+    return gulp.src(paths.static_css)
+        .pipe(plumber())
+        .pipe(gulp.dest(paths.dest_css));
+});
+
+gulp.task('watch', function () {
+    gulp.watch('src/**/*.elm', ['elm']);
     gulp.watch(paths.static, ['static']);
 });
 
-// Local server
-gulp.task('connect', function() {
+gulp.task('connect', function () {
     connect.server({
         root: 'dist',
         port: 3000
     });
 });
 
-// Main gulp tasks
-gulp.task('build', ['elm', 'static']);
+
+gulp.task('build', ['elm', 'static_html', 'static_css']);
 gulp.task('default', ['connect', 'build', 'watch']);
