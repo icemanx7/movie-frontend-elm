@@ -1,16 +1,16 @@
-module Login.Model exposing (..)
-
--- model
+module HomePage.Model exposing (..)
 
 
 type alias Model =
-    { username : String
-    , password : String
+    { id_movie : String
+    , name : String
+    , year : String
     }
 
 
-initModel : Model
-initModel =
-    { username = ""
-    , password = ""
+initMovie : Model
+initMovie =
+    { id_movie = ""
+    , name = ""
+    , year = ""
     }

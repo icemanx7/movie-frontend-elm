@@ -1,5 +1,17 @@
 {
   "dependencies": {
-    "elm-format": "^0.7.0-exp"
+    "elm-format": "^0.7.0-exp",
+    "request": "^2.86.0"
+  },
+  "scripts": {
+    "build": "gulp connect"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-connect": "^4.0.0",
+    "gulp-elm": "^0.6.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.7",
+    "gulp-yarn": "^2.0.0"
   }
 }

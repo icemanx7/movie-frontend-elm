@@ -1,7 +1,5 @@
 module Login.Model exposing (..)
 
--- model
-
 
 type alias Model =
     { username : String

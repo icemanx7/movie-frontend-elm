@@ -1,18 +1,9 @@
-module Login.Update exposing (..)
+module HomePage.Update exposing (..)
 
-import Login.Model exposing (..)
+import HomePage.Model exposing (..)
+import Http
 
 
 type Msg
-    = UsernameInput String
+    = GotMovieList (Result Http.Error String)
     | PasswordInput String
-
-
-update : Msg -> Model -> Model
-update msg model =
-    case msg of
-        UsernameInput username ->
-            { model | username = username }
-
-        PasswordInput password ->
-            { model | password = password }
